@@ -1,3 +1,21 @@
+### bevy_egui_inspector
+
+This repository is simply a neat repackaging of the [dock example from
+bevy-inspector-egui](https://github.com/jakobhellermann/bevy-inspector-egui/blob/95bb3940529c84179a60a5b7c49a2587e85f1c22/crates/bevy-inspector-egui/examples/integrations/egui_dock.rs)
+as a library crate for ease of use.
+
+#### Usage
+
+Add the dependency to your project:
+
+```bash
+cargo add bevy_egui_inspector
+```
+
+Add the `bevy_egui_inspector::EguiEditorPlugin` to your `App` and the
+`EditorCamera` marker struct to your `Camera`:
+
+```rust
 // Example adapted from
 // https://github.com/jakobhellermann/bevy-inspector-egui/blob/95bb3940529c84179a60a5b7c49a2587e85f1c22/crates/bevy-inspector-egui/examples/integrations/egui_dock.rs
 extern crate bevy_egui_editor;
@@ -151,6 +169,6 @@ fn setup(
             ..Default::default()
         },
         EditorCamera,
-        // PickRaycastSource,
     ));
 }
+```
