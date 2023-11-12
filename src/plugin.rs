@@ -58,7 +58,9 @@ fn set_camera_viewport(
     egui_settings: Res<bevy_egui::EguiSettings>,
     mut cameras: Query<&mut Camera, With<EditorCamera>>,
 ) {
-    let mut cam = cameras.single_mut();
+    let Ok(mut cam) = cameras.get_single_mut() else {
+        return;
+    };
 
     let Ok(window) = primary_window.get_single() else {
         return;
